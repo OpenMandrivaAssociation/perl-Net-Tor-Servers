@@ -1,18 +1,18 @@
-%define realname   Net-Tor-Servers
-%define version    0.02
-%define release    %mkrel 1
+%define upstream_name    Net-Tor-Servers
+%define upstream_version 0.02
 
-Name:       perl-%{realname}
-Version:    %{version}
-Release:    %{release}
-License:    GPL v2 or Artistic
-Group:      Development/Perl
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
 Summary:    Perl extension to query a Tor Directory and collect information on servers
-Source:     http://www.cpan.org/modules/by-module/Net/%{realname}-%{version}.tar.gz
-Url:        http://search.cpan.org/dist/%{realname}
-BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-buildroot
-BuildRequires: perl-devel
+License:    GPLv2+ or Artistic
+Group:      Development/Perl
+Url:        http://search.cpan.org/dist/%{upstream_name}
+Source0:    http://www.cpan.org/modules/by-module/Net/%{upstream_name}-%{upstream_version}.tar.gz
+
 BuildArch: noarch
+BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 This module was written to make life a little easier for me when I have
@@ -24,14 +24,14 @@ Its nothing special, just a quick and easy way to get the data together in
 an array.
 
 %prep
-%setup -q -n %{realname}-%{version} 
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
 %make
 
 %check
-make test
+%make test
 
 %install
 rm -rf %buildroot
@@ -45,5 +45,3 @@ rm -rf %buildroot
 %doc Changes README
 %{_mandir}/man3/*
 %perl_vendorlib/*
-
-
