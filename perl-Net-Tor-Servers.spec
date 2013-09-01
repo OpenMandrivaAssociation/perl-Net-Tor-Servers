@@ -2,14 +2,14 @@
 %define upstream_version 0.03
 
 Name:		perl-%{upstream_name}
-Version:	%perl_convert_version 0.03
+Version:	%perl_convert_version %{upstream_version}
 Release:	1
 
 Summary:	Perl extension to query a Tor Directory and collect information on servers
 License:	GPLv2+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Net/AJDIXON/Net-Tor-Servers-0.03.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/Net/AJDIXON/Net-Tor-Servers-%{upstream_version}.tar.gz
 
 BuildRequires:	perl-devel
 BuildArch:	noarch
