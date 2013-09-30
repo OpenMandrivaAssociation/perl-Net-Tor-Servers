@@ -24,7 +24,7 @@ Its nothing special, just a quick and easy way to get the data together in
 an array.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -qc
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
