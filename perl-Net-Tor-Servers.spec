@@ -3,7 +3,7 @@
 
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	1
+Release:	2
 
 Summary:	Perl extension to query a Tor Directory and collect information on servers
 License:	GPLv2+ or Artistic
